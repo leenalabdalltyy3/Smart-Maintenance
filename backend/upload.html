@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Maintenance</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            padding: 30px;
+            background: #f5f7fa;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            background: #007bff;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .risk {
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 6px;
+            display: inline-block;
+        }
+
+        .safe { background: #d4edda; color: #155724; }
+        .moderate { background: #fff3cd; color: #856404; }
+        .dangerous { background: #f8d7da; color: #721c24; }
+
+        #preview {
+            margin-top: 15px;
+            max-width: 300px;
+            display: none;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Smart Maintenance Assistant</h2>
+
+    <form id="uploadForm">
+        <input type="file" name="image" required />
+        <br><br>
+        <button type="submit">Analyze</button>
+    </form>
+
+    <!-- 📸 Image Preview -->
+    <img id="preview" />
+
+    <!-- 📦 Result -->
+    <div id="result"></div>
+
+    <script>
+        const form = document.getElementById('uploadForm');
+        const fileInput = document.querySelector('input[type="file"]');
+        const preview = document.getElementById('preview');
+        const resultDiv = document.getElementById('result');
+
+        // 📸 Show preview
+        fileInput.addEventListener('change', () => {
+            const file = fileInput.files[0];
+
+            if (file) {
+                preview.src = URL.createObjectURL(file);
+                preview.style.display = "block";
+            }
+        });
+
+        // 🚀 Submit form
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const formData = new FormData(form);
+
+            resultDiv.innerHTML = "Analyzing... ⏳";
+
+            try {
+                const response = await fetch('http://127.0.0.1:8000/api/analyze/', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const data = await response.json();
+
+                let resultText = data.result
+                    .replace(/```json/g, "")
+                    .replace(/```/g, "")
+                    .trim();
+
+                let parsed;
+
+                try {
+                    parsed = JSON.parse(resultText);
+                } catch {
+                    resultDiv.innerHTML = "<div class='card'>Invalid response</div>";
+                    return;
+                }
+
+                let riskClass = "";
+                if (parsed.risk === "simple" || parsed.risk === "none") riskClass = "safe";
+                else if (parsed.risk === "moderate") riskClass = "moderate";
+                else riskClass = "dangerous";
+
+                resultDiv.innerHTML = `
+                    <div class="card">
+                        <h3>Result</h3>
+                        <p><strong>Problem:</strong> ${parsed.problem}</p>
+                        <p><strong>Risk:</strong> 
+                            <span class="risk ${riskClass}">${parsed.risk}</span>
+                        </p>
+                        <p><strong>Advice:</strong> ${parsed.advice}</p>
+                    </div>
+                `;
+
+            } catch (error) {
+                resultDiv.innerHTML = "<div class='card'>Something went wrong ❌</div>";
+            }
+        });
+    </script>
+
+</body>
+</html>

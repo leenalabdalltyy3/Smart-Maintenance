@@ -1,0 +1,936 @@
+/* NAVBAR */
+
+.dashboard-navbar{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:10px 20px;
+
+margin-bottom:30px;
+
+}
+.dashboard-logo img{
+
+width:520px;
+
+max-width:none;
+
+height:auto;
+
+object-fit:contain;
+
+display:block;
+
+}
+
+.dashboard-actions{
+
+display:flex;
+
+gap:18px;
+
+}
+
+.nav-btn{
+
+border:none;
+
+padding:18px 28px;
+
+border-radius:18px;
+
+background:white;
+
+color:#6b30ff;
+
+font-size:18px;
+
+font-weight:700;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.nav-btn:hover{
+
+transform:translateY(-3px);
+
+}
+
+.logout-btn{
+
+border:none;
+
+padding:18px 34px;
+
+border-radius:18px;
+
+background:
+
+linear-gradient(
+90deg,
+#ff8a00,
+#7b2ff7
+);
+
+color:white;
+
+font-size:18px;
+
+font-weight:700;
+
+cursor:pointer;
+
+}
+
+.logout-btn:hover{
+
+transform:translateY(-3px);
+
+}
+.dashboard-page {
+
+  min-height: 100vh;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ff8a00,
+      #7b2ff7
+    );
+
+  padding: 30px;
+
+  font-family: Arial, sans-serif;
+}
+
+
+/* NAVBAR */
+
+.dashboard-navbar {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  color: white;
+
+  margin-bottom: 40px;
+}
+
+.dashboard-navbar h1 {
+
+  font-size: 42px;
+}
+
+.dashboard-navbar button {
+
+  background: white;
+
+  color: #7b2ff7;
+
+  border: none;
+
+  padding: 12px 20px;
+
+  border-radius: 12px;
+
+  cursor: pointer;
+
+  font-weight: bold;
+
+  margin-left: 10px;
+}
+
+
+
+/* STATS */
+
+.stats-card {
+
+  background: white;
+
+  width: 280px;
+
+  padding: 25px;
+
+  border-radius: 25px;
+
+  margin-bottom: 40px;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.2);
+}
+
+.stats-card h2 {
+
+  color: #7b2ff7;
+
+  margin-bottom: 10px;
+}
+
+.stats-card p {
+
+  font-size: 45px;
+
+  font-weight: bold;
+
+  color: #ff8a00;
+}
+
+
+
+/* GRID */
+
+.appointments-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      auto-fit,
+      minmax(320px,1fr)
+    );
+
+  gap: 30px;
+}
+
+
+
+/* APPOINTMENT CARD */
+
+.appointment-card {
+
+  background: white;
+
+  padding: 30px;
+
+  border-radius: 25px;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.2);
+}
+
+.appointment-card h2 {
+
+  color: #7b2ff7;
+
+  margin-bottom: 20px;
+
+  text-align:center;
+}
+
+.appointment-card p {
+
+  line-height: 1.8;
+
+  color: #555;
+}
+
+
+
+/* STATUS */
+
+.status-badge {
+
+  background: #ff8a00;
+
+  color: white;
+
+  padding: 6px 14px;
+
+  border-radius: 10px;
+
+  margin-left: 10px;
+
+  font-size: 14px;
+
+  font-weight: bold;
+}
+
+
+
+/* EMPTY */
+
+.empty-card {
+
+  background: white;
+
+  padding: 40px;
+
+  border-radius: 25px;
+
+  text-align: center;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.2);
+}
+
+.empty-card h2 {
+
+  color: #7b2ff7;
+
+  margin-bottom: 15px;
+}
+
+.empty-card p {
+
+  color: #666;
+}
+
+
+
+/* PROFILE POPUP */
+
+.profile-overlay{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+background:
+
+rgba(
+0,
+0,
+0,
+0.55
+);
+
+backdrop-filter:
+
+blur(
+8px
+);
+
+z-index:999;
+
+}
+
+.profile-popup{
+
+background:#ffffff;
+
+width:550px;
+
+padding:45px;
+
+border-radius:30px;
+
+box-shadow:
+0 20px 60px rgba(0,0,0,.25);
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+gap:20px;
+
+}
+
+
+
+.profile-popup h2{
+
+font-size:50px;
+
+color:#7b2ff7;
+
+margin-bottom:20px;
+
+}
+
+
+
+.profile-popup p{
+
+font-size:18px;
+
+width:100%;
+
+color:#444;
+
+margin:0;
+
+}
+
+
+
+.profile-popup input,
+
+.profile-popup textarea{
+
+width:100%;
+
+padding:18px;
+
+border:none;
+
+border-radius:15px;
+
+background:#f3f3f3;
+
+font-size:18px;
+
+outline:none;
+
+box-sizing:border-box;
+
+}
+
+
+
+.profile-popup textarea{
+
+height:130px;
+
+resize:none;
+
+}
+
+
+
+.profile-popup button{
+
+width:100%;
+
+padding:18px;
+
+border:none;
+
+border-radius:18px;
+
+background:
+
+linear-gradient(
+90deg,
+#7b2ff7,
+#ff8a00
+);
+
+color:white;
+
+font-size:22px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+
+
+.profile-popup button:hover{
+
+transform:
+scale(1.02);
+
+}
+
+
+
+.profile-popup label{
+
+width:100%;
+
+font-size:20px;
+
+font-weight:bold;
+
+color:#7b2ff7;
+
+margin-bottom:-10px;
+
+}
+
+
+@keyframes showPopup{
+
+from{
+
+opacity:0;
+
+transform:
+
+translateY(
+-40px
+);
+
+}
+
+to{
+
+opacity:1;
+
+transform:
+
+translateY(
+0
+);
+
+}
+
+}
+/* ==========================
+GLOBAL RESPONSIVE FIX
+PUT THIS AT VERY BOTTOM
+========================== */
+
+*{
+
+margin:0;
+
+padding:0;
+
+box-sizing:border-box;
+
+}
+
+html,
+body,
+#root{
+
+width:100%;
+
+min-height:100vh;
+
+overflow-x:hidden;
+
+}
+
+
+
+/* MAIN PAGE CONTAINERS */
+
+.dashboard-page,
+.booking-page,
+.schedule-page,
+.login-page{
+
+width:100%;
+
+max-width:100%;
+
+min-height:100vh;
+
+padding:
+
+clamp(
+15px,
+3vw,
+35px
+);
+
+}
+
+
+
+/* NAVBAR */
+
+.dashboard-navbar,
+.booking-navbar{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+flex-wrap:wrap;
+
+gap:15px;
+
+}
+
+
+
+/* BUTTON GROUP */
+
+.dashboard-navbar div,
+.booking-navbar div{
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:10px;
+
+}
+
+
+
+/* GRID */
+
+.appointments-grid,
+.technicians-grid,
+.slot-list{
+
+display:grid;
+
+grid-template-columns:
+
+repeat(
+
+auto-fit,
+
+minmax(
+
+300px,
+
+1fr
+
+)
+
+);
+
+gap:20px;
+
+width:100%;
+
+}
+
+
+
+/* CARDS */
+
+.stats-card,
+.appointment-card,
+.tech-card,
+.empty-card,
+.slot-card{
+
+width:100%;
+
+max-width:100%;
+
+}
+
+
+
+/* TABLE */
+
+.schedule-table{
+
+width:100%;
+
+display:block;
+
+overflow-x:auto;
+
+}
+
+
+
+/* BUTTON */
+
+button{
+
+max-width:100%;
+
+}
+
+
+
+/* IMAGE */
+
+img{
+
+max-width:100%;
+
+height:auto;
+
+}
+
+
+
+/* SMALL LAPTOP */
+
+@media(
+max-width:1366px
+){
+
+.dashboard-navbar h1,
+.booking-navbar h1{
+
+font-size:34px;
+
+}
+
+}
+
+
+
+/* TABLET */
+
+@media(
+max-width:768px
+){
+
+.dashboard-navbar,
+.booking-navbar{
+
+flex-direction:column;
+
+}
+
+.dashboard-navbar h1,
+.booking-navbar h1{
+
+font-size:30px;
+
+text-align:center;
+
+}
+
+.stats-card{
+
+width:100%;
+
+}
+
+}
+
+
+
+/* MOBILE */
+
+@media(
+max-width:480px
+){
+
+.dashboard-page,
+.booking-page,
+.schedule-page{
+
+padding:15px;
+
+}
+
+button{
+
+width:100%;
+
+}
+
+table{
+
+font-size:14px;
+
+}
+
+}
+/* ===== NEW DASHBOARD ===== */
+
+.dashboard-navbar{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:flex-start;
+
+margin-bottom:40px;
+
+color:white;
+padding:20px 30px;
+
+}
+
+.dashboard-left{
+
+display:flex;
+
+gap:25px;
+
+align-items:center;
+
+}
+.dashboard-logo{
+
+width:auto;
+
+display:flex;
+
+align-items:center;
+
+}
+
+.dashboard-left h1{
+
+font-size:68px;
+
+margin-bottom:10px;
+
+}
+
+.dashboard-left p{
+
+font-size:26px;
+
+opacity:.95;
+
+}
+
+.dashboard-actions{
+
+display:flex;
+
+gap:20px;
+
+}
+
+.dashboard-actions button{
+
+background:white;
+
+color:#7b2ff7;
+
+border:none;
+
+padding:20px 30px;
+
+border-radius:20px;
+
+display:flex;
+
+gap:12px;
+
+align-items:center;
+
+font-size:20px;
+
+font-weight:700;
+
+cursor:pointer;
+
+}
+
+.stats-card{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+gap:40px;
+
+width:100%;
+
+padding:50px;
+
+border-radius:40px;
+
+}
+
+.stats-icon{
+
+font-size:70px;
+
+}
+
+.stats-card h2{
+
+font-size:48px;
+
+}
+
+.stats-card p{
+
+font-size:90px;
+
+}
+
+.appointment-card{
+
+padding:40px;
+
+border-radius:35px;
+
+}
+
+.card-user{
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+gap:15px;
+
+}
+
+.card-user h2{
+
+font-size:32px;
+
+}
+
+.appointment-card p{
+
+display:flex;
+
+gap:15px;
+
+align-items:center;
+
+font-size:22px;
+
+margin-top:18px;
+
+}
+
+.status-badge{
+
+padding:12px 20px;
+
+border-radius:30px;
+
+}
+
+@media(max-width:1200px){
+
+.dashboard-navbar{
+
+flex-direction:column;
+
+}
+
+.dashboard-left h1{
+
+font-size:48px;
+
+}
+
+.dashboard-actions{
+
+width:100%;
+
+}
+
+}

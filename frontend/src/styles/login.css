@@ -1,0 +1,459 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.login-page {
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ff8a00,
+      #7b2ff7
+    );
+}
+
+.login-card {
+
+  width: 900px;
+  height: 500px;
+
+  background: white;
+
+  border-radius: 25px;
+
+  display: flex;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.2);
+}
+.login-left{
+
+flex:1;
+
+background:
+linear-gradient(
+135deg,
+#ff8a00,
+#ff5e62
+);
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+gap:0px;
+
+padding:40px;
+
+}
+.welcome-text{
+
+color:white;
+
+font-size:58px;
+
+font-weight:700;
+
+margin:100;
+
+}
+.login-logo{
+width:2000px;
+
+max-width:200%;
+
+object-fit:contain;
+
+margin-top:-40px;
+
+}
+.login-logo:hover{
+
+transform:scale(1.03);
+
+}
+
+.login-left h1 {
+
+  font-size: 42px;
+
+  margin-bottom: 15px;
+}
+
+.login-left p {
+
+  font-size: 18px;
+
+  max-width: 300px;
+
+  line-height: 1.6;
+}
+
+.login-right {
+
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 60px;
+}
+.login-right h2 {
+
+margin-bottom:35px;
+
+font-size:64px;
+
+font-weight:700;
+
+background:
+linear-gradient(
+90deg,
+#ff8a00,
+#7b2ff7
+);
+
+-webkit-background-clip:text;
+
+color:transparent;
+
+text-align:center;
+
+}
+
+.login-right input {
+
+  padding: 15px;
+
+  margin-bottom: 20px;
+
+  border: 1px solid #ddd;
+
+  border-radius: 12px;
+
+  font-size: 16px;
+
+  outline: none;
+
+  transition: 0.3s;
+}
+
+.login-right input:focus {
+
+  border-color: #7b2ff7;
+}
+
+.login-right button {
+
+  padding: 15px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background: #7b2ff7;
+
+  color: white;
+
+  font-size: 16px;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+.login-right button{
+
+background:
+linear-gradient(
+90deg,
+#ff8a00,
+#7b2ff7
+);
+
+}
+.signup-btn{
+
+background:
+linear-gradient(
+90deg,
+#ff8a00,
+#ff5e62
+)!important;
+
+}
+
+.signup-btn:hover {
+
+  background: #e67600 !important;
+}
+
+.login-right p {
+
+  margin-top: 25px;
+
+  text-align: center;
+
+  color: #666;
+}
+/* ==========================
+GLOBAL RESPONSIVE FIX
+PUT THIS AT VERY BOTTOM
+========================== */
+
+*{
+
+margin:0;
+
+padding:0;
+
+box-sizing:border-box;
+
+}
+
+html,
+body,
+#root{
+
+width:100%;
+
+min-height:100vh;
+
+overflow-x:hidden;
+
+}
+
+
+
+/* MAIN PAGE CONTAINERS */
+
+.dashboard-page,
+.booking-page,
+.schedule-page,
+.login-page{
+
+width:100%;
+
+max-width:100%;
+
+min-height:100vh;
+
+padding:
+
+clamp(
+15px,
+3vw,
+35px
+);
+
+}
+
+
+
+/* NAVBAR */
+
+.dashboard-navbar,
+.booking-navbar{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+flex-wrap:wrap;
+
+gap:15px;
+
+}
+
+
+
+/* BUTTON GROUP */
+
+.dashboard-navbar div,
+.booking-navbar div{
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:10px;
+
+}
+
+
+
+/* GRID */
+
+.appointments-grid,
+.technicians-grid,
+.slot-list{
+
+display:grid;
+
+grid-template-columns:
+
+repeat(
+
+auto-fit,
+
+minmax(
+
+300px,
+
+1fr
+
+)
+
+);
+
+gap:20px;
+
+width:100%;
+
+}
+
+
+
+/* CARDS */
+
+.stats-card,
+.appointment-card,
+.tech-card,
+.empty-card,
+.slot-card{
+
+width:100%;
+
+max-width:100%;
+
+}
+
+
+
+/* TABLE */
+
+.schedule-table{
+
+width:100%;
+
+display:block;
+
+overflow-x:auto;
+
+}
+
+
+
+/* BUTTON */
+
+button{
+
+max-width:100%;
+
+}
+
+
+
+/* IMAGE */
+
+img{
+
+max-width:100%;
+
+height:auto;
+
+}
+
+
+
+/* SMALL LAPTOP */
+
+@media(
+max-width:1366px
+){
+
+.dashboard-navbar h1,
+.booking-navbar h1{
+
+font-size:34px;
+
+}
+
+}
+
+
+
+/* TABLET */
+
+@media(
+max-width:768px
+){
+
+.dashboard-navbar,
+.booking-navbar{
+
+flex-direction:column;
+
+}
+
+.dashboard-navbar h1,
+.booking-navbar h1{
+
+font-size:30px;
+
+text-align:center;
+
+}
+
+.stats-card{
+
+width:100%;
+
+}
+
+}
+
+
+
+/* MOBILE */
+
+@media(
+max-width:480px
+){
+
+.dashboard-page,
+.booking-page,
+.schedule-page{
+
+padding:15px;
+
+}
+
+button{
+
+width:100%;
+
+}
+
+table{
+
+font-size:14px;
+
+}
+
+}
